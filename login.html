@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CHAT A.I+ | Azərbaycan</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./login.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-panel">
+        <div class="logo">CHAT A.I<span>+</span></div>
+        <div class="hero-text">
+          <h1>Hər Şeyi Bir Yerdə<br />Öyrən, Kəşf Et və Avtomatlaşdır.</h1>
+        </div>
+
+        <div class="chat-container">
+          <div class="user-query">
+            <p id="user-display-msg">
+              Python dilində GPT chatbotunu necə yarada bilərəm?
+            </p>
+            <div class="edit-btn-small"><i class="fas fa-pen"></i></div>
+          </div>
+
+          <div class="bot-response-section">
+            <div class="bot-content" id="bot-chat-area">
+              <div class="bot-status-tag">
+                CHAT A.I + <i class="fas fa-chevron-circle-down"></i>
+              </div>
+
+              <p class="intro-text" id="bot-main-text"></p>
+            </div>
+
+            <div class="side-toolbar">
+              <i class="far fa-thumbs-up" title="Bəyən"></i>
+              <div class="sep"></div>
+              <i class="far fa-thumbs-down" title="Bəyənmə"></i>
+              <div class="sep"></div>
+              <i class="far fa-copy" id="copy-btn" title="Kopyala"></i>
+              <div class="sep"></div>
+              <i class="fas fa-ellipsis-h"></i>
+            </div>
+          </div>
+
+          <div class="bottom-input-bar">
+            <i class="far fa-smile"></i>
+            <input
+              type="text"
+              id="chat-input-field"
+              placeholder="Cavab yazın..."
+            />
+            <div class="action-icons">
+              <i class="far fa-image"></i>
+              <button class="send-arrow" id="send-msg-btn">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-panel">
+        <div class="form-container">
+          <h2>Pulsuz sınaq üçün qeydiyyat</h2>
+          <p class="subtitle">
+            Təcrübənizi artırın, bu gün pulsuz hesab yaradın
+          </p>
+
+          <form id="auth-form">
+            <div class="input-field">
+              <label>E-poçt ünvanı*</label>
+              <input type="email" placeholder="nümunə@domain.com" required />
+            </div>
+
+            <div class="input-field">
+              <label>Şifrə*</label>
+              <div class="password-wrapper">
+                <input
+                  type="password"
+                  id="login-pass"
+                  placeholder="Şifrənizi daxil edin"
+                  required
+                />
+                <i class="far fa-eye" id="eye-toggle"></i>
+              </div>
+            </div>
+
+            <p class="terms-text">
+              Hesab yaradaraq <a href="#">Xidmət Şərtlərimizi</a> və
+              <a href="#">Məxfilik Siyasətimizi</a> qəbul etmiş olursunuz.
+            </p>
+
+            <button type="submit" class="btn-primary">Pulsuz başlayın</button>
+          </form>
+
+          <p class="login-link">
+            Artıq hesabınız var? <a href="#">Daxil olun</a>
+          </p>
+
+          <div class="divider">
+            <span>Və ya daha yaxşısı...</span>
+          </div>
+
+          <div class="social-login">
+            <button class="btn-social">
+              <img
+                src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png"
+                alt="Google"
+              />
+              Google ilə davam et
+            </button>
+            <button class="btn-social">
+              <i class="fab fa-apple"></i>
+              Apple ilə davam et
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <script type="module" src="./login.js"></script>
+  </body>
+</html>
