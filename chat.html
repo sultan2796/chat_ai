@@ -1,13 +1,199 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>>CHAT A.I+ | Dashboard</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="chat-style.css">
-</head>
-<body>
-    
-</body>
+<!doctype html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CHAT A.I+ | İdarəetmə Paneli</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="chat-style.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+
+    <style>
+      #canvas-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="canvas-container"
+      style="position: fixed; top: 0; left: 0; z-index: -1"
+    ></div>
+
+    <div class="app-container">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="logo">CHAT A.I<span>+</span></div>
+
+          <div class="header-actions">
+            <button class="new-chat-btn">
+              <i class="fas fa-plus"></i> Yeni çat
+            </button>
+
+            <button class="search-icon">
+              <i class="fas fa-search"></i>
+            </button>
+
+            <button id="theme-toggle" class="theme-toggle">
+              <i class="fas fa-moon"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="chat-history">
+          <p class="section-title">
+            Söhbətləriniz <span class="clear-all">Hamısını təmizlə</span>
+          </p>
+
+          <ul id="history-list">
+            <li><i class="far fa-comment"></i> HTML Oyun Mühiti Yaradın...</li>
+            <li><i class="far fa-comment"></i> Təcili Məzuniyyət Müraciəti</li>
+            <li><i class="far fa-comment"></i> UI UX Dizayn Nədir?</li>
+            <li><i class="far fa-comment"></i> POS Sistemi Yaradın</li>
+          </ul>
+
+          <p class="section-date">Son 7 gün</p>
+
+          <ul id="history-recent">
+            <li><i class="far fa-comment"></i> Kripto Kredit Tətbiqi Adı</li>
+            <li><i class="far fa-comment"></i> Operator Qrammatika Tipləri</li>
+          </ul>
+        </div>
+
+        <div class="sidebar-footer">
+          <div class="footer-item"><i class="fas fa-cog"></i> Parametrlər</div>
+
+          <div class="user-profile">
+            <img src="./profile-default.webp" id="user-img" />
+            <div class="user-info">
+              <span id="user-name">Sultan Tagiyev</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="chat-main">
+        <div class="upgrade-tag">
+          Pro-ya keçid edin <i class="fas fa-sparkles"></i>
+        </div>
+
+        <div class="welcome-section">
+          <div class="badge-logo">CHAT A.I+</div>
+
+          <h1>Xoş gördük! Bu gün sizə necə kömək edə bilərəm?</h1>
+
+          <div class="info-grid">
+            <div class="info-row">
+              <div class="info-card dark">
+                <i class="fas fa-globe"></i>
+                <h3>Kəşf et</h3>
+                <p>Platformanı necə istifadə etməyi öyrən</p>
+              </div>
+
+              <div class="divider-lines">
+                <span></span><span></span><span></span>
+              </div>
+
+              <div class="example-cards-wrapper">
+                <div class="example-card">
+                  <div>🔮</div>
+                  <span>İzah et</span>
+                  <p>Kvant hesablamasını sadə izah et</p>
+                </div>
+
+                <div class="example-card">
+                  <div>🤖</div>
+                  <span>Necə etməli</span>
+                  <p>Google kimi sistem necə qurulur?</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-card dark">
+                <i class="fas fa-bolt"></i>
+                <h3>İmkanlar</h3>
+                <p>Süni intellekt nələri bacarır</p>
+              </div>
+
+              <div class="divider-lines">
+                <span></span><span></span><span></span>
+              </div>
+
+              <div class="example-cards-wrapper">
+                <div class="example-card">
+                  <div>🧠</div>
+                  <span>Xatırla</span>
+                  <p>Danışıqları yadda saxlayır</p>
+                </div>
+
+                <div class="example-card">
+                  <div>⚙️</div>
+                  <span>İcazə ver</span>
+                  <p>Düzəliş imkanı verir</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-card dark">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3>Məhdudiyyətlər</h3>
+                <p>Bəzi zəif tərəflər</p>
+              </div>
+
+              <div class="divider-lines">
+                <span></span><span></span><span></span>
+              </div>
+
+              <div class="example-cards-wrapper">
+                <div class="example-card">
+                  <div>❌</div>
+                  <span>Bəzən</span>
+                  <p>Yanlış cavab verə bilər</p>
+                </div>
+
+                <div class="example-card">
+                  <div>🌐</div>
+                  <span>Məhdud</span>
+                  <p>Köhnə məlumat ola bilər</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-area">
+          <div class="input-wrapper">
+            <span>🧠</span>
+            <input
+              type="text"
+              id="chat-input-field"
+              placeholder="Ağlınızda nə var?..."
+            />
+            <button class="send-btn" id="send-msg-btn">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+
+    <script src="p5-effect.js"></script>
+
+    <script src="chat-logic.js"></script>
+  </body>
 </html>

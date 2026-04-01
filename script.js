@@ -81,7 +81,7 @@ if (authForm) {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       alert("Email ilə qeydiyyat uğurludur!");
-      window.location.href = "chat.html";
+      window.location.href = "./chat.html";
     } catch (error) {
       handleAuthError(error);
     }
@@ -94,7 +94,7 @@ if (googleBtn) {
     try {
       const result = await signInWithPopup(auth, provider);
       alert(`Xoş gəldiniz, ${result.user.displayName}`);
-      window.location.href = "chat.html";
+      window.location.href = "./chat.html";
     } catch (error) {
       handleAuthError(error);
     }

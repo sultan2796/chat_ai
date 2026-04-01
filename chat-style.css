@@ -1,0 +1,425 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+/* css reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #f8f9fb;
+}
+
+/* ana container */
+.app-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 280px;
+  height: 100vh;
+  background: #ffffff;
+  border-right: 1px solid #eef0f2;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  flex-shrink: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 0px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 30px;
+  color: #1a1a1a;
+}
+
+.logo span {
+  color: #5865f2;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.new-chat-btn {
+  flex: 1;
+  background: #5865f2;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+.search-icon {
+  width: 44px;
+  height: 44px;
+  background: #000000;
+  border: none;
+  border-radius: 50%;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.chat-history {
+  flex: 1;
+  width: 100%;
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #888;
+  padding: 15px 0;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 10px;
+  border-top: 1px solid #f0f0f0;
+  margin-top: 10px;
+}
+
+.clear-all {
+  color: #5865f2;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.chat-history ul li {
+  padding: 12px 10px;
+  font-size: 13.5px;
+  color: #4a4a4a;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chat-history li:hover {
+  background: #f4f6ff;
+  color: #5865f2;
+}
+
+.section-date {
+  font-size: 12px;
+  color: #b0b5bb;
+  border-top: 1px solid #f0f2f5;
+  margin: 20px -24px 10px -24px;
+  padding: 20px 24px 0 24px;
+  display: block;
+}
+
+.chat-main {
+  flex: 1;
+  background-color: #f8f9fb;
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 20px;
+}
+
+.footer-item,
+.user-profile {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #eef0f2;
+  padding: 8px 12px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  width: 100%;
+}
+
+.footer-item:hover,
+.user-profile:hover {
+  background-color: #f8f9fb;
+  border-color: #d1d5db;
+}
+
+.footer-item i {
+  width: 34px;
+  height: 34px;
+  background: #f1f3f4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3c4043;
+  font-size: 14px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+#user-img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.footer-item,
+#user-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #202124;
+  white-space: nowrap;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+/* esas chat hisesi sag teref */
+
+.chat-main {
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.upgrade-tag {
+  position: fixed;
+  right: 0;
+  top: 40%;
+  background: #5b5ce6;
+  color: #fff;
+  padding: 20px 12px;
+  border-radius: 15px 0 0 15px;
+  writing-mode: vertical-rl;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: -2px 0 10px rgba(91, 92, 230, 0.3);
+}
+
+.badge-logo {
+  display: inline-block;
+  background: #fff;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.welcome-section h1 {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #000;
+}
+
+.info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.divider-lines {
+  display: flex;
+  gap: 4px;
+  height: 50px;
+}
+
+.divider-lines span {
+  width: 2px;
+  height: 100%;
+  background-color: #ddd;
+  border-radius: 2px;
+}
+
+/* Sol qara card hisesi */
+
+.info-card.dark {
+  background: #111;
+  color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: left;
+  width: 200px;
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-card.dark i {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.info-card.dark h3 {
+  font-size: 18px;
+  margin: 0 0 4px 0;
+}
+.info-card.dark p {
+  font-size: 12px;
+  color: #aaa;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* sag ag card hisesi */
+
+.example-cards-wrapper {
+  display: flex;
+  gap: 15px;
+}
+
+/* Ag cardlarin ozu */
+
+.example-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 18px;
+  text-align: left;
+  width: 240px;
+  min-height: 90px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.example-card:hover {
+  transform: translateY(-3px);
+}
+
+.card-icon-img {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.example-card span {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.example-card p {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+  width: 85%;
+}
+
+.example-card .fa-arrow-right {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  color: #ccc;
+  font-size: 12px;
+}
+
+.input-area {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.input-wrapper {
+  background: #fff;
+  padding: 10px 15px;
+  border-radius: 40px;
+  width: 650px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.brain-emoji {
+  font-size: 22px;
+  margin-right: 15px;
+}
+
+.input-wrapper input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 16px;
+  color: #333;
+}
+
+.send-btn {
+  background: #5b5ce6;
+  border: none;
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.send-btn:hover {
+  background: #4a4bc7;
+}
+
+#canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Digər elementlərin arxasında qalsın */
+  pointer-events: none; /* Klikləri keçirsin (bloklamasın) */
+}
+
