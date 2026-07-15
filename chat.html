@@ -12,24 +12,12 @@
     <link rel="stylesheet" href="chat-style.css" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-
-    <style>
-      #canvas-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        pointer-events: none;
-      }
-    </style>
+    <script src="https://cdn.jsdelivr.net/npm/marked@4.3.0/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
   </head>
   <body>
-    <div
-      id="canvas-container"
-      style="position: fixed; top: 0; left: 0; z-index: -1"
-    ></div>
+    <div id="canvas-container"></div>
 
     <div class="app-container">
       <aside class="sidebar">
@@ -72,7 +60,7 @@
         </div>
 
         <div class="sidebar-footer">
-          <div class="footer-item"><i class="fas fa-cog"></i> Parametrlər</div>
+          <div class="footer-item" id="settings-btn"><i class="fas fa-cog"></i> Parametrlər</div>
 
           <div class="user-profile">
             <img src="./profile-default.webp" id="user-img" />
@@ -190,10 +178,32 @@
       </main>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <div id="settings-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Parametrlər</h2>
+        <div class="modal-body">
+          <div class="input-group">
+            <label>Adınız:</label>
+            <input type="text" id="settings-name-input" placeholder="Adınızı daxil edin" />
+          </div>
+          <div class="input-group">
+            <label>Profil Şəkli (URL):</label>
+            <input type="text" id="settings-img-input" placeholder="Şəkil URL-si" />
+          </div>
+          <div class="input-group">
+            <label>Gemini API Açarı:</label>
+            <input type="password" id="settings-api-key-input" placeholder="Buraya API açarını daxil edin" />
+          </div>
+          <div class="modal-actions">
+            <button id="save-settings-btn" class="btn-primary">Yadda Saxla</button>
+            <button id="logout-btn" class="btn-danger">Çıxış Et</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="p5-effect.js"></script>
-
     <script src="chat-logic.js"></script>
   </body>
 </html>
